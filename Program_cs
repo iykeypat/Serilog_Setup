@@ -2,5 +2,11 @@
 Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
 builder.Host.UseSerilog();
 
-//serilog
+//serilog for logging htttp requests
 app.UseSerilogRequestLogging();
+
+//package reference
+<PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+
+//use it anywhere in your code
+Log.Information("IGG => {@loggedOnUserIGG}",loggedOnUserIGG);
