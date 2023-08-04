@@ -1,0 +1,6 @@
+//serilog
+Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
+builder.Host.UseSerilog();
+
+//serilog
+app.UseSerilogRequestLogging();
